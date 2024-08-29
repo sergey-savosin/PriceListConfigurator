@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PriceListConfigurator.Properties
+namespace PriceListConfiguratorUI.Properties
 {
 
 

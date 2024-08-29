@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using PriceListConfigurator.Startup;
+using PriceListConfiguratorUI.Startup;
 using System;
 using System.Windows;
 
-namespace PriceListConfigurator
+namespace PriceListConfiguratorUI
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="PriceListConfiguratorUI.View.SetupConnectionWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PriceListConfiguratorUI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Window.Resources>
+        <!-- Value Converters -->
+        <vc:IgnoreNewItemPlaceHolderConverter x:Key="ignoreNewItemPlaceHolderConverter"/>
+
+        <!-- DataGrid Background -->
+        <LinearGradientBrush x:Key="BlueLightGradientBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#FFEAF3FF"/>
+            <GradientStop Offset="0.654" Color="#FFC0DEFF"/>
+            <GradientStop Offset="1" Color="#FFC0D9FB"/>
+        </LinearGradientBrush>
+
+        <!-- DatGrid style -->
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Background" Value="{StaticResource BlueLightGradientBrush}" />
+            <Setter Property="BorderBrush" Value="#FFA6CCF2" />
+            <Setter Property="RowBackground" Value="White" />
+            <Setter Property="AlternatingRowBackground" Value="#FDFFD0" />
+            <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
+            <Setter Property="VerticalGridLinesBrush" Value="#FFD3D0" />
+            <Setter Property="RowHeaderWidth" Value="0" />
+        </Style>
+
+        <!-- Enable rows as drop targets -->
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="AllowDrop" Value="True" />
+        </Style>
+
+    </Window.Resources>
+    <DockPanel>
+
+        <DockPanel LastChildFill="False" DockPanel.Dock="Top" Margin="5,0,5,0">
+            <TextBlock Text="Database connection List" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Cambria" FontSize="21.333">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="#FF437CA6"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <Button Command="{Binding DeleteItem}" DockPanel.Dock="Right" ToolTip="Delete selected item from the list"
+                    Padding="4">
+                <Image Source="..\Images\DeleteClause.png" Height="16" Width="16" />
+            </Button>
+            <Button Command="{Binding AddItem}" DockPanel.Dock="Right" ToolTip="Add new item to the list"
+                    Padding="4">
+                <Image Source="..\Images\AddClause.png" Height="16" Width="16" />
+            </Button>
+        </DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <TextBlock Text="Number of items: " TextWrapping="NoWrap"/>
+            <TextBlock Text="{Binding ItemCount}" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <DataGrid x:Name="MainGrid" 
+                          ItemsSource="{Binding ConnectionList}" 
+                          SelectedItem="{Binding SelectedItem,Converter={StaticResource ignoreNewItemPlaceHolderConverter}}" 
+                          AutoGenerateColumns="False" 
+                          DockPanel.Dock="Top"
+                          MouseMove="OnMainGridMouseMove"
+                          DragEnter="OnMainGridCheckDropTarget"
+                          DragLeave="OnMainGridCheckDropTarget"
+                          DragOver="OnMainGridCheckDropTarget"
+                          Drop="OnMainGridDrop" DataContextChanged="OnMainGridDataContextChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Width="20" Binding="{Binding SequenceNumber}" IsReadOnly="false" />
+                <DataGridTextColumn Header="Название" Width="180" Binding="{Binding Name}" IsReadOnly="false" />
+                <DataGridTextColumn Header="Сервер" Width="*" Binding="{Binding ServerName}" IsReadOnly="false" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</UserControl>

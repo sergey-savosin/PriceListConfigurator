@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace PriceListConfigurator.Startup
+namespace PriceListConfiguratorUI.Startup
 {
     public class Bootstrapper
     {
