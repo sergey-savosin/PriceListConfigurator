@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceListConfigurator.UI", "PriceListConfigurator.UI.csproj", "{3AD9513C-54AF-4DAF-8DED-9DBC1DAD3B84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceListConfigurator.UI", "PriceListConfigurator.UI\PriceListConfigurator.UI.csproj", "{3AD9513C-54AF-4DAF-8DED-9DBC1DAD3B84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceListConfigurator.Model", "PriceListConfigurator.Model\PriceListConfigurator.Model.csproj", "{6E96E737-6B01-4DA6-9064-AE7044D92863}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceListConfigurator.Model", "PriceListConfigurator.Model\PriceListConfigurator.Model.csproj", "{4E8F8EF1-61C5-409E-8E65-4FFFD0B6B887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceListConfigurator.Data", "PriceListConfigurator.Data\PriceListConfigurator.Data.csproj", "{DED81D10-CDE0-41C4-BB89-6979C094CAD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{3AD9513C-54AF-4DAF-8DED-9DBC1DAD3B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AD9513C-54AF-4DAF-8DED-9DBC1DAD3B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AD9513C-54AF-4DAF-8DED-9DBC1DAD3B84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E96E737-6B01-4DA6-9064-AE7044D92863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E96E737-6B01-4DA6-9064-AE7044D92863}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E96E737-6B01-4DA6-9064-AE7044D92863}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E96E737-6B01-4DA6-9064-AE7044D92863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8F8EF1-61C5-409E-8E65-4FFFD0B6B887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8F8EF1-61C5-409E-8E65-4FFFD0B6B887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8F8EF1-61C5-409E-8E65-4FFFD0B6B887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8F8EF1-61C5-409E-8E65-4FFFD0B6B887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED81D10-CDE0-41C4-BB89-6979C094CAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED81D10-CDE0-41C4-BB89-6979C094CAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED81D10-CDE0-41C4-BB89-6979C094CAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED81D10-CDE0-41C4-BB89-6979C094CAD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

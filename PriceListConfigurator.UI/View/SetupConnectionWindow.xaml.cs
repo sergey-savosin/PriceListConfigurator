@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PriceListConfigurator.Model;
+using PriceListConfigurator.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

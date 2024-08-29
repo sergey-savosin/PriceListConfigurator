@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=8.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>packages\Autofac.8.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+      <HintPath>..\packages\Autofac.8.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -47,7 +47,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
@@ -82,7 +82,13 @@
     </ApplicationDefinition>
     <Compile Include="Startup\Bootstrapper.cs" />
     <Compile Include="UtilityClasses\ViewModelBase.cs" />
+    <Compile Include="ViewModel\Commands\AddItemCommand.cs" />
+    <Compile Include="ViewModel\Commands\DeleteItemCommand.cs" />
     <Compile Include="ViewModel\Commands\ShowSetupConnectionWindowCommand.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Services\SequencingService.cs" />
+    <Compile Include="ViewModel\SetupConnectionViewModel.cs" />
+    <Compile Include="ViewModel\ValueConverters\IgnoreNewItemPlaceHolderConverter.cs" />
     <Compile Include="View\SetupConnectionWindow.xaml.cs">
       <DependentUpon>SetupConnectionWindow.xaml</DependentUpon>
     </Compile>
@@ -130,8 +136,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ViewModel\Services\" />
+    <Resource Include="Images\AddClause.png" />
+    <Resource Include="Images\DeleteClause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PriceListConfigurator.Data\PriceListConfigurator.Data.csproj">
+      <Project>{ded81d10-cde0-41c4-bb89-6979c094cad4}</Project>
+      <Name>PriceListConfigurator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PriceListConfigurator.Model\PriceListConfigurator.Model.csproj">
+      <Project>{4e8f8ef1-61c5-409e-8e65-4fffd0b6b887}</Project>
+      <Name>PriceListConfigurator.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
