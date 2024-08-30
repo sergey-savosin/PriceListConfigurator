@@ -1,5 +1,6 @@
 ﻿using PriceListConfigurator.Data.Repository;
 using PriceListConfigurator.Model;
+using PriceListConfigurator.ViewModel.Commands;
 using PriceListConfiguratorUI.UtilityClasses;
 using PriceListConfiguratorUI.ViewModel.Commands;
 using System;
@@ -21,9 +22,12 @@ namespace PriceListConfigurator.ViewModel
         public MainViewModel(IConnectionRepository connectionRepository)
         {
             _connectionRepository = connectionRepository;
+            DoTest = new DoTestCommand(this);
             ShowSetupConnectionWindow = new ShowSetupConnectionWindowCommand(this);
             p_ConnectionList = new ObservableCollection<Connection>();
         }
+        
+        public ICommand DoTest { get; }
 
         public ICommand ShowSetupConnectionWindow { get; }
 

@@ -84,6 +84,7 @@
     <Compile Include="UtilityClasses\ViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\AddItemCommand.cs" />
     <Compile Include="ViewModel\Commands\DeleteItemCommand.cs" />
+    <Compile Include="ViewModel\Commands\DoTestCommand.cs" />
     <Compile Include="ViewModel\Commands\ShowSetupConnectionWindowCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Services\SequencingService.cs" />

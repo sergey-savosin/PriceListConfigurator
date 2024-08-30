@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:PriceListConfiguratorUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical">
+        <Menu FontSize="16">
+            <MenuItem Header="Настройка" Padding="2">
+                <MenuItem Padding="2" Command="{Binding ShowSetupConnectionWindow}" Header="Настройка соединений БД..." />
+            </MenuItem>
+        </Menu>
+        <ToolBar>
+            <ComboBox MinWidth="200" ItemsSource="{Binding ConnectionList}"
+                      SelectedItem="{Binding SelectedConnectionItem}"
+                      DisplayMemberPath="Name" />
+            <Button Command="{Binding DoTest}">
+                <Image Source="..\Images\AddClause.png" Height="16" Width="16"
+                       RenderOptions.EdgeMode="Aliased" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+            </Button>
+        </ToolBar>
+    </StackPanel>
 </Window>
