@@ -3,12 +3,8 @@ using PriceListConfigurator.Model;
 using PriceListConfigurator.ViewModel.Commands;
 using PriceListConfiguratorUI.UtilityClasses;
 using PriceListConfiguratorUI.ViewModel.Commands;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PriceListConfigurator.ViewModel
@@ -38,7 +34,7 @@ namespace PriceListConfigurator.ViewModel
             set
             {
                 p_ConnectionList = value;
-                base.RaisePropertyChangedEvent("ConnectionList");
+                base.RaisePropertyChangedEvent(nameof(ConnectionList));
             }
         }
 
@@ -48,7 +44,7 @@ namespace PriceListConfigurator.ViewModel
             set
             {
                 p_SelectedItem = value;
-                base.RaisePropertyChangedEvent("SelectedConnectionItem");
+                base.RaisePropertyChangedEvent(nameof(SelectedConnectionItem));
             }
         }
 
@@ -67,7 +63,8 @@ namespace PriceListConfigurator.ViewModel
                     {
                         Name = item.Name,
                         SequenceNumber = item.SequenceNumber,
-                        ServerName = item.ServerName
+                        ServerName = item.ServerName,
+                        DatabaseName = item.DatabaseName
                     });
             }
 

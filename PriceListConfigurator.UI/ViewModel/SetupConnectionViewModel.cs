@@ -98,7 +98,8 @@ namespace PriceListConfigurator.ViewModel
                     {
                         Name = item.Name,
                         SequenceNumber = item.SequenceNumber,
-                        ServerName = item.ServerName
+                        ServerName = item.ServerName,
+                        DatabaseName = item.DatabaseName,
                     });
             }
 

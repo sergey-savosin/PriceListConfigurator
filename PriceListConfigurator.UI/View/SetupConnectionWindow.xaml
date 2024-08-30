@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PriceListConfiguratorUI.View"
              xmlns:vc="clr-namespace:PriceListConfigurator.ViewModel.ValueConverters"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="200" d:DesignWidth="300">
     <Window.Resources>
         <!-- Value Converters -->
         <vc:IgnoreNewItemPlaceHolderConverter x:Key="ignoreNewItemPlaceHolderConverter"/>
@@ -71,7 +71,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" Width="20" Binding="{Binding SequenceNumber}" IsReadOnly="false" />
                 <DataGridTextColumn Header="Название" Width="180" Binding="{Binding Name}" IsReadOnly="false" />
-                <DataGridTextColumn Header="Сервер" Width="*" Binding="{Binding ServerName}" IsReadOnly="false" />
+                <DataGridTextColumn Header="Сервер" Width="250" Binding="{Binding ServerName}" IsReadOnly="false" />
+                <DataGridTextColumn Header="База данных" Width="*" Binding="{Binding DatabaseName}" IsReadOnly="false" />
             </DataGrid.Columns>
         </DataGrid>
 

@@ -7,6 +7,7 @@ namespace PriceListConfigurator.Model
         private int _sequenceNumber;
         private string _name;
         private string _serverName;
+        private string _databaseName;
 
         public int SequenceNumber
         {
@@ -24,7 +25,7 @@ namespace PriceListConfigurator.Model
             set
             {
                 _name = value;
-                base.RaisePropertyChangedEvent("Name");
+                base.RaisePropertyChangedEvent(nameof(Name));
             }
         }
 
@@ -34,7 +35,17 @@ namespace PriceListConfigurator.Model
             set
             {
                 _serverName = value;
-                base.RaisePropertyChangedEvent("ServerName");
+                base.RaisePropertyChangedEvent(nameof(ServerName));
+            }
+        }
+
+        public string DatabaseName
+        {
+            get { return _databaseName; }
+            set
+            {
+                _databaseName = value;
+                base.RaisePropertyChangedEvent(nameof(DatabaseName));
             }
         }
 
