@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Input;
 
@@ -26,7 +28,24 @@ namespace PriceListConfigurator.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("SearchText is empty", "Attention");
+            string serverName = _viewModel.SelectedConnectionItem.ServerName;
+            string databaseName = _viewModel.SelectedConnectionItem.DatabaseName;
+
+            var con = GetOpenConnection(serverName, databaseName);
+
+            MessageBox.Show($"Connection state: {con.State}", "Attention");
+        }
+
+        public static IDbConnection GetOpenConnection(string serverName, string databaseName)
+        {
+            var b = new SqlConnectionStringBuilder();
+            b.DataSource = serverName;
+            b.InitialCatalog = databaseName;
+            b.IntegratedSecurity = true;
+
+            var connection = new SqlConnection(b.ToString());
+            connection.Open();
+            return connection;
         }
     }
 }
