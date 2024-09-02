@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PriceListConfiguratorUI.View"
              xmlns:vc="clr-namespace:PriceListConfigurator.ViewModel.ValueConverters"
-             mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300">
+             mc:Ignorable="d"
+             WindowStartupLocation="CenterOwner"
+             Height="400" Width="700">
     <Window.Resources>
         <!-- Value Converters -->
         <vc:IgnoreNewItemPlaceHolderConverter x:Key="ignoreNewItemPlaceHolderConverter"/>

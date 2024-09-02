@@ -2,6 +2,7 @@
 using PriceListConfiguratorUI.Startup;
 using System;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace PriceListConfiguratorUI
 {
@@ -16,16 +17,24 @@ namespace PriceListConfiguratorUI
             var container = boot.Bootstrap();
 
             var mainWindow = container.Resolve<MainWindow>();
-
             mainWindow.Show();
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            MessageBox.Show("Произошла ошибка." +
-                Environment.NewLine + e.Exception.Message + "\r\n" + e.Exception.StackTrace, "Ошибка в приложении");
-            e.Handled = true;
+            ShowUnhandledException(e);
+        }
 
+        private void ShowUnhandledException(DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            string exceptionMessage = e.Exception.Message +
+                "\n\n--- Inner exception: ---\n\n" +
+                e.Exception.InnerException?.Message ?? string.Empty;
+
+
+            MessageBox.Show(exceptionMessage, "Application Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            Application.Current.Shutdown();
         }
     }
 }

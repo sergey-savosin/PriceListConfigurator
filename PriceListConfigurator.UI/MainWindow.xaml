@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Orientation="Vertical">
-        <Menu FontSize="16">
+        <Menu FontSize="14">
             <MenuItem Header="Настройка" Padding="2">
                 <MenuItem Padding="2" Command="{Binding ShowSetupConnectionWindow}" Header="Настройка соединений БД..." />
             </MenuItem>
